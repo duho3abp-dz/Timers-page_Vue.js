@@ -1,28 +1,67 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <TimersList 
+        :timerData="timerData" 
+        @start-date="setStartDate"
+        @pause-time="setPauseTime"
+      />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TimersList from './components/TimersList';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: { TimersList },
+  data() {
+    return {
+      timerData: [
+        {id: 1, start: 0, pause: 0},
+        {id: 2, start: 0, pause: 0},
+        {id: 3, start: 0, pause: 0},
+        {id: 4, start: 0, pause: 0},
+        {id: 5, start: 0, pause: 0},
+      ]
+    }
+  },
+  methods: {
+    setStartDate(start, id) {
+      this.timerData = this.timerData.map(obj => {
+        if (obj.id === id) {
+          obj.start = start;
+        }
+        
+        return obj;
+      });
+    },
+    setPauseTime(pause, id) {
+        this.timerData = this.timerData.map(obj => {
+        if (obj.id === id) {
+          obj.pause = pause;
+        }
+        
+        return obj;
+      });
+    }
   }
 }
 </script>
 
 <style>
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url('./assets/fonts/GothamPro.woff') format('woff');
+	src: url('./assets/fonts/GothamPro.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Gotham Pro;
+  font-size: 22px;
+  color: #9E9E9E;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 72px;
+  margin-bottom: 30px;
 }
 </style>
