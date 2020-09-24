@@ -17,8 +17,9 @@
                 <div class="rectangle"></div>
             </div>
 
-            <div class="stop"></div>
+            <div @click="onStop" class="stop"></div>
         </div>
+        <div @click="$emit('delete-timer', time.id)" class="delete-timer">&times;</div>
     </div>
 </template>
 
@@ -73,19 +74,20 @@ export default {
         pauseTimer() {
             this.included = false;
             this.pause = true;
+        },
+        onStop() {
+            this.included = false;
+            this.pause = true;
+            this.hours = 0;
+            this.minutes = 0;
+            this.seconds = 0;
+            this.$emit('reset-timer', this.time.id);
         }
     }
 }
 </script>
 
 <style scoped>
-.timer {
-    display: inline-block;
-    width: 225px;
-    height: 120px;
-    background: #696969;
-    margin: 0 25px 45px;
-}
 .timer-top, .timer-bottom {
     height: 50%;
     display: flex;
@@ -130,5 +132,12 @@ export default {
 .active .stop, 
 .active .rectangle {
     background: #ffffff;
+}
+
+.delete-timer {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    cursor: pointer;
 }
 </style>
