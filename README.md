@@ -1,19 +1,11 @@
 # timers-page
 
-## Project setup
-```
-npm install
-```
+## Project description
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+This is a responsive timer page written in Vue.js.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Functional:
+- Timer start;
+- Timer pause;
+- Reset timer;
+- There is a button that adds a new stopwatch to the list.

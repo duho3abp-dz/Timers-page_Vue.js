@@ -1,7 +1,7 @@
 <template>
     <div class="timers">
         <TimerItem 
-            v-for="(time, i) of timerData"
+            v-for="time of timerData"
             :time="time"
             :key="time.id"
             @start-date="setStartDate"
