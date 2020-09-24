@@ -38,7 +38,7 @@ export default {
     },
     methods: {
         upgateTimer(start, difference = 0) {
-            const interval = setInterval(() => {
+            const animateTimer = () => {
                 const nowTime = new Date().getTime(),
                       t = (nowTime - difference) - start;
                 
@@ -46,11 +46,14 @@ export default {
                     this.hours = Math.floor(t / 1000 / 60 / 24);
                     this.minutes = Math.floor((t / 1000 / 60) % 60);
                     this.seconds = Math.floor((t / 1000) % 60);
+                    requestAnimationFrame(animateTimer);
                 } else {
-                    this.$emit('pause-time', nowTime - 1000, this.time.id);
-                    clearInterval(interval);
+                    this.$emit('pause-time', nowTime, this.time.id);
+                    cancelAnimationFrame(interval);
                 }
-            }, 1000);
+            }
+
+            const interval = requestAnimationFrame(animateTimer);
         },
         startTimer() {
             const {id, start, pause} = this.time;
