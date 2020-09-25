@@ -1,3 +1,4 @@
+//-------------------RENDER-------------------//
 <template>
   <div class="wrapper">
       <TimersList 
@@ -14,6 +15,7 @@
   </div>
 </template>
 
+//-------------------LOGIC-------------------//
 <script>
 import TimersList from '../components/TimersList';
 
@@ -69,6 +71,7 @@ export default {
 }
 </script>
 
+//-------------------STYLE-------------------//
 <style scoped>
 .wrapper {
     margin-top: 72px;

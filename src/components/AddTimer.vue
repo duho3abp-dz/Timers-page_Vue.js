@@ -1,3 +1,4 @@
+//-------------------RENDER-------------------//
 <template>
     <div @click="$emit('add-timer')" class="timer timer-add">
         <div class="plus-block">
@@ -7,6 +8,7 @@
     </div>
 </template>
 
+//-------------------STYLE-------------------//
 <style scoped>
 .timer-add {
     display: flex;

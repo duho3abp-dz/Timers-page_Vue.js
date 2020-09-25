@@ -1,3 +1,4 @@
+//-------------------RENDER-------------------//
 <template>
     <div class="timers">
         <TimerItem 
@@ -13,6 +14,7 @@
     </div>
 </template>
 
+//-------------------LOGIC-------------------//
 <script>
 import TimerItem from './TimerItem';
 import AddTimer from './AddTimer';
@@ -37,6 +39,7 @@ export default {
 }
 </script>
 
+//-------------------STYLE-------------------//
 <style scoped>
 .timers {
     display: flex;

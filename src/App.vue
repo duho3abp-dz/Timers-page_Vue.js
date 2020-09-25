@@ -1,9 +1,11 @@
+//-------------------RENDER-------------------//
 <template>
   <div id="app">
     <router-view />
   </div>
 </template>
 
+//-------------------STYLE-------------------//
 <style>
 @font-face {
 	font-family: 'Gotham Pro';

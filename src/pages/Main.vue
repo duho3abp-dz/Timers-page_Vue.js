@@ -1,3 +1,4 @@
+//-------------------RENDER-------------------//
 <template>
     <div class="main">
         <h1>Timers Page</h1>
@@ -18,6 +19,7 @@
     </div>
 </template>
 
+//-------------------STYLE-------------------//
 <style scoped>
 .main {
     width: 100vw;

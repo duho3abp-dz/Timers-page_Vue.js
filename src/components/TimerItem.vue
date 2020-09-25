@@ -1,3 +1,4 @@
+//-------------------RENDER-------------------//
 <template>
     <div :class="{active: included}" class="timer">
         <div class="timer-top">
@@ -23,6 +24,7 @@
     </div>
 </template>
 
+//-------------------LOGIC-------------------//
 <script>
 export default {
     props: [ 'time' ],
@@ -90,6 +92,7 @@ export default {
 }
 </script>
 
+//-------------------STYLE-------------------//
 <style scoped>
 .timer-top, .timer-bottom {
     height: 50%;
